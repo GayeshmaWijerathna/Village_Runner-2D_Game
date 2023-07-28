@@ -5,12 +5,13 @@
 .background{
     width: 100%;
     height: 100vh;
-    background-image: url("resources/background.jpg");
+    background-image: url("resources/background2.jpg");
     background-size: cover;
+    background-repeat: repeat-x;
 }
 
 .boy {
-    height: 280px;
-    margin-top: 302px;
+    height: 250px;
+    margin-top: 307px;
     position: absolute;
 }
