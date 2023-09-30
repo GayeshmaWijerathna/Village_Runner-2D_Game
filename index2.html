@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The 2D Game</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class="body" onload="idleAnimationStart(); createBoxes();" onkeypress="keyCheck(event);">
+
+    <div class="background2" id="background2">
+        <img src="resources/Idle__000.png" alt="" class="boy" id="boy">
+
+        <div class="score" id="score">0</div>
+
+    </div>
+
+    <div class="end" id="end">
+        <div style="color:#ef0202">Game Over</div>
+        <div style="color:#0693d7">Your Score</div>
+        <div style="color: #000000" id="endScore">0</div>
+        <button class="btn" onclick="reload();">Try Again</button>
+    </div>
+
+    <script src="Script2.js"></script>
+</body>
+</html>
