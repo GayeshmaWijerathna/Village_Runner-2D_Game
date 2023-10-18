@@ -13,6 +13,8 @@ var runMusic = new Audio("resources/audio/running-on-footstep.mp3");
 
 var jump = new Audio("resources/audio/jump.mp3");
 
+var nextLevelMusic = new Audio("resources/audio/HEROICCC(chosic.com).mp3");
+
 
 
 
@@ -150,8 +152,8 @@ function moveBackground() {
     score = score+1;
 
     document.getElementById("score").innerHTML=score;
-
-    if (score == 10){
+// Level complete got after 300 Scores.
+    if (score == 300){
         levelCompleted();
     }
 }
@@ -275,7 +277,7 @@ function levelCompleted(){
 
     document.getElementById("currentScore").innerHTML = score;
     document.getElementById("nextLevel").style.visibility = "visible";
-
+    nextLevelMusic.play();
     document.addEventListener("keydown", function(event) {
         if (event.keyCode === 32) {
 
@@ -284,6 +286,7 @@ function levelCompleted(){
 
                 // Navigate to the next HTML page
                 window.location.href = "index2.html";
+                nextLevelMusic.pause();
             }
         }
     });
