@@ -3,7 +3,7 @@ let idleImageNumber = 1;
 let idleAnimationNumber = 0;
 
 
-var Background = new Audio("resources/audio/beforeStart.mp3");
+var backgroundm = new Audio("resources/audio/beforeStart.mp3");
 
 var deadMusic = new Audio("resources/audio/Dead1.mp3");
 var damaged = new Audio("resources/audio/damaged.mp3");
@@ -25,7 +25,7 @@ function idleAnimation() {
     }
     boy.src = "resources/Idle__00" + idleImageNumber + ".png";
 
-    // Background.play();
+     backgroundm.play();
 }
 
 function idleAnimationStart() {
@@ -45,7 +45,7 @@ function runAnimation() {
     }
 
     boy.src = " resources/Run__00" + runImageNumber + ".png";
-Background.pause();
+backgroundm.pause();
 runMusic.play();
 }
 
@@ -150,6 +150,10 @@ function moveBackground() {
     score = score+1;
 
     document.getElementById("score").innerHTML=score;
+
+    if (score == 10){
+        levelCompleted();
+    }
 }
 
   let  boxMarginLeft =1540;
@@ -229,7 +233,7 @@ function boyDeadAnimation(){
         runMusic.pause();
         setTimeout(() => { damaged.pause(); }, 2500);
 
-        Background.play();
+        backgroundm.play();
 
         document.getElementById("end").style.visibility = "visible";
         document.getElementById("endScore").innerHTML = score;
@@ -244,6 +248,46 @@ function boyDeadAnimation(){
 
 }
 
+// function updateScore(){
+// document.getElementById("score").innerHTML=score;
+// if (score == 50){
+//     levelCompleted();
+// }
+// }
+
+function levelCompleted(){
+    clearInterval(runAnimationNumber);
+    runAnimationNumber=-1;
+    clearInterval(runImageNumber);
+    runImageNumber=-1;
+    clearInterval(jumpAnimationNumber);
+    jumpAnimationNumber=-1;
+    clearInterval(jumpImageNumber);
+    jumpImageNumber=-1;
+    clearInterval(boxAnimationId);
+    boxAnimationId=-1;
+
+    clearInterval(moveBackgroundAnimationID);
+    moveBackgroundAnimationID=1;
+
+    backgroundm.pause();
+    runMusic.pause();
+
+    document.getElementById("currentScore").innerHTML = score;
+    document.getElementById("nextLevel").style.visibility = "visible";
+
+    document.addEventListener("keydown", function(event) {
+        if (event.keyCode === 32) {
+
+            var btnNext = document.getElementById("btnNext");
+            if (btnNext) {
+
+                // Navigate to the next HTML page
+                window.location.href = "index2.html";
+            }
+        }
+    });
+}
 
 function reload(){
 
