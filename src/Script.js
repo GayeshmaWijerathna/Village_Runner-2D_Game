@@ -16,15 +16,16 @@ var jump = new Audio("resources/audio/jump.mp3");
 
 
 
+
 function idleAnimation() {
     idleImageNumber = idleImageNumber + 1;
-   onkeypress(Background.play());
+
     if (idleImageNumber == 10) {
         idleImageNumber = 1;
     }
     boy.src = "resources/Idle__00" + idleImageNumber + ".png";
 
-
+    // Background.play();
 }
 
 function idleAnimationStart() {
@@ -104,6 +105,8 @@ function keyCheck(event) {
 
     /*Enter - Run*/
     if (keyCode == 13) {
+        document.getElementById("start").style.visibility = "hidden";
+
         if (runAnimationNumber == 0) {
             runAnimationStart();
         }
@@ -118,6 +121,7 @@ function keyCheck(event) {
 
     /*Space - Jump*/
     if (keyCode == 32) {
+        document.getElementById("start").style.visibility = "hidden";
         if (jumpAnimationNumber == 0){
             jumpAnimationStart();
         }
@@ -223,7 +227,7 @@ function boyDeadAnimation(){
         deadImageNumber=9;
         damaged.play();
         runMusic.pause();
-        setTimeout(() => { damaged.pause(); }, 2800);
+        setTimeout(() => { damaged.pause(); }, 2500);
 
         Background.play();
 
@@ -242,6 +246,8 @@ function boyDeadAnimation(){
 
 
 function reload(){
+
     location.reload();
 
 }
+
