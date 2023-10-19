@@ -3,17 +3,17 @@ let idleImageNumber = 1;
 let idleAnimationNumber = 0;
 
 
-var backgroundm = new Audio("src/resources/audio/beforeStart.mp3");
+var backgroundm = new Audio("assets/resources/audio/beforeStart.mp3");
 
-var deadMusic = new Audio("src/resources/audio/Dead1.mp3");
+var deadMusic = new Audio("assets/resources/audio/Dead1.mp3");
 
-var damaged = new Audio("src/resources/audio/damaged.mp3");
+var damaged = new Audio("assets/resources/audio/damaged.mp3");
 
-var runMusic = new Audio("src/resources/audio/running-on-footstep.mp3");
+var runMusic = new Audio("assets/resources/audio/running-on-footstep.mp3");
 
-var jump = new Audio("src/resources/audio/jump.mp3");
+var jump = new Audio("assets/resources/audio/jump.mp3");
 
-var nextLevelMusic = new Audio("src/resources/audio/HEROICCC(chosic.com).mp3");
+var nextLevelMusic = new Audio("assets/resources/audio/HEROICCC(chosic.com).mp3");
 
 
 
@@ -24,7 +24,7 @@ function idleAnimation() {
     if (idleImageNumber == 10) {
         idleImageNumber = 1;
     }
-    boy.src = "resources/Idle__00" + idleImageNumber + ".png";
+    boy.src = "assets/resources/Idle__00" + idleImageNumber + ".png";
     
      backgroundm.play();
 }
@@ -45,7 +45,7 @@ function runAnimation() {
         runImageNumber = 1;
     }
 
-    boy.src = " resources/Run__00" + runImageNumber + ".png";
+    boy.src = " assets/resources/Run__00" + runImageNumber + ".png";
 backgroundm.pause();
 runMusic.play();
 }
@@ -84,7 +84,7 @@ function jumpAnimation(){
 
     }
 
-    boy.src = "resources/Jump__00" + jumpImageNumber + ".png";
+    boy.src = "assets/resources/Jump__00" + jumpImageNumber + ".png";
 }
 
 function jumpAnimationStart(){
@@ -244,7 +244,7 @@ function boyDeadAnimation(){
     }
     
 
-    boy.src = "resources/Dead__00"+deadImageNumber+".png";
+    boy.src = "assets/resources/Dead__00"+deadImageNumber+".png";
 
 }
 
@@ -283,7 +283,7 @@ function levelCompleted(){
             if (btnNext) {
 
                 // Navigate to the next HTML page
-                window.location.href = "src/index2.html";
+                window.location.href = "assets/index2.html";
                 nextLevelMusic.pause();
             }
         }

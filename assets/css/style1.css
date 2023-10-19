@@ -4,7 +4,7 @@
     height: 130px;
     position: absolute;
     margin-top: 435px;
-    background-image: url("resources/prickle.png");
+    background-image: url("../resources/prickle.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -14,7 +14,7 @@
     height: 130px;
     position: absolute;
     margin-top: 435px;
-    background-image: url("resources/OldThree.png");
+    background-image: url("../resources/OldThree.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
