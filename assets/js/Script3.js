@@ -147,7 +147,7 @@ function moveBackground() {
 
     document.getElementById("score").innerHTML=score;
     // Level complete got after 450 Scores.
-    if (score == 20){
+    if (score == 450){
         levelCompleted();
     }
 }
