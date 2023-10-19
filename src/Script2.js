@@ -2,6 +2,19 @@ let boy = document.getElementById("boy");
 let idleImageNumber = 1;
 let idleAnimationNumber = 0;
 
+var backgroundm = new Audio("resources/audio/beforeStart.mp3");
+
+var deadMusic = new Audio("resources/audio/Dead1.mp3");
+
+var damaged = new Audio("resources/audio/damaged.mp3");
+
+var runMusic = new Audio("resources/audio/running-on-the-road.mp3");
+
+var jump = new Audio("resources/audio/jump.mp3");
+
+var nextLevelMusic = new Audio("resources/audio/HEROICCC(chosic.com).mp3");
+
+
 function idleAnimation() {
     idleImageNumber = idleImageNumber + 1;
 
@@ -10,6 +23,7 @@ function idleAnimation() {
         idleImageNumber = 1;
     }
     boy.src = "resources/Idle__00" + idleImageNumber + ".png";
+    backgroundm.play();
 }
 
 function idleAnimationStart() {
@@ -29,7 +43,8 @@ function runAnimation() {
     }
 
     boy.src = " resources/Run__00" + runImageNumber + ".png";
-
+    backgroundm.pause();
+    runMusic.play();
 }
 
 function runAnimationStart() {
@@ -44,6 +59,8 @@ let boyMarginTop = 347;
 
 function jumpAnimation(){
     jumpImageNumber = jumpImageNumber+1;
+    jump.play();
+    runMusic.pause();
 
     if ( jumpImageNumber <= 5){
         boyMarginTop = boyMarginTop - 35;
@@ -128,6 +145,10 @@ function moveBackground() {
     score = score+1;
 
     document.getElementById("score").innerHTML=score;
+    // Level complete got after 350 Scores.
+    if (score == 350){
+        levelCompleted();
+    }
 }
 
   let  boxMarginLeft =1540;
@@ -199,6 +220,12 @@ let deadAnimationNumber =0;
 function boyDeadAnimation(){
 
     deadImageNumber = deadImageNumber +1;
+    runMusic.pause();
+    damaged.play();
+    setTimeout(() => { damaged.pause(); }, 2500);
+    backgroundm.play();
+    deadMusic.play();
+    setTimeout(() => { deadMusic.pause(); }, 1000);
 
     if (deadImageNumber == 10){
         deadImageNumber=9;
@@ -210,6 +237,41 @@ function boyDeadAnimation(){
 
     boy.src = "resources/Dead__00"+deadImageNumber+".png";
 
+}
+
+function levelCompleted(){
+    clearInterval(runAnimationNumber);
+    runAnimationNumber=-1;
+    clearInterval(runImageNumber);
+    runImageNumber=-1;
+    clearInterval(jumpAnimationNumber);
+    jumpAnimationNumber=-1;
+    clearInterval(jumpImageNumber);
+    jumpImageNumber=-1;
+    clearInterval(boxAnimationId);
+    boxAnimationId=-1;
+
+    clearInterval(moveBackgroundAnimationID);
+    moveBackgroundAnimationID=1;
+
+    backgroundm.pause();
+    runMusic.pause();
+
+    document.getElementById("currentScore").innerHTML = score;
+    document.getElementById("nextLevel").style.visibility = "visible";
+    nextLevelMusic.play();
+    document.addEventListener("keydown", function(event) {
+        if (event.keyCode === 32) {
+
+            var btnNext = document.getElementById("btnNext");
+            if (btnNext) {
+
+                // Navigate to the next HTML page
+                window.location.href = "index3.html";
+                nextLevelMusic.pause();
+            }
+        }
+    });
 }
 
 

@@ -6,8 +6,8 @@ let idleAnimationNumber = 0;
 var backgroundm = new Audio("resources/audio/beforeStart.mp3");
 
 var deadMusic = new Audio("resources/audio/Dead1.mp3");
-var damaged = new Audio("resources/audio/damaged.mp3");
 
+var damaged = new Audio("resources/audio/damaged.mp3");
 
 var runMusic = new Audio("resources/audio/running-on-footstep.mp3");
 
@@ -152,8 +152,8 @@ function moveBackground() {
     score = score+1;
 
     document.getElementById("score").innerHTML=score;
-// Level complete got after 300 Scores.
-    if (score == 300){
+// Level complete got after 310 Scores.
+    if (score == 310){
         levelCompleted();
     }
 }
@@ -228,23 +228,22 @@ let deadAnimationNumber =0;
 function boyDeadAnimation(){
 
     deadImageNumber = deadImageNumber +1;
+    damaged.play();
+    runMusic.pause();
+    setTimeout(() => { damaged.pause(); }, 2500);
+    backgroundm.play();
+    deadMusic.play();
+    setTimeout(() => { deadMusic.pause(); }, 1000);
 
     if (deadImageNumber == 10){
         deadImageNumber=9;
-        damaged.play();
-        runMusic.pause();
-        setTimeout(() => { damaged.pause(); }, 2500);
-
-        backgroundm.play();
+       
 
         document.getElementById("end").style.visibility = "visible";
         document.getElementById("endScore").innerHTML = score;
 
     }
-
-    deadMusic.play();
-
-    setTimeout(() => { deadMusic.pause(); }, 1000);
+    
 
     boy.src = "resources/Dead__00"+deadImageNumber+".png";
 
@@ -293,8 +292,6 @@ function levelCompleted(){
 }
 
 function reload(){
-
     location.reload();
-
 }
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Village Runner - L3</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class="body" onload="idleAnimationStart(); createBoxes();" onkeypress="keyCheck(event);">
+
+    <div class="background3" id="background3">
+        <img src="resources/Idle__000.png" alt="" class="boy" id="boy">
+        <div style="color: #222f00; font-size: 30px; position:relative; font-family: 'Adobe Gothic Std B'; top:40px;
+        left:20px; font-weight: bold ">Level III</div>
+        <div class="score" style="color: #8b0404;" id="score">0</div>
+
+    </div>
+
+    <div class="end" id="end">
+        <div style="color:#ef0202" >Game Over</div>
+        <div style="color:#795b00">Your Score</div>
+        <div style="color: #000000" id="endScore">0</div>
+        <button class="btn" onclick="reload();">Try Again</button>
+    </div>
+
+    <div class="nextLevel" id="nextLevel">
+        <div class="dv1">Your Score </div>
+        <div class="dv1" id="currentScore">0</div>
+        <button class="btnNext" id="btnNext" hidden ></button>
+    </div>
+    <script src="Script3.js"></script>
+</body>
+</html>
