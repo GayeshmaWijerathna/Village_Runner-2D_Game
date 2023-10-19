@@ -147,7 +147,7 @@ function moveBackground() {
 
     document.getElementById("score").innerHTML=score;
     // Level complete got after 450 Scores.
-    if (score == 450){
+    if (score == 20){
         levelCompleted();
     }
 }
@@ -262,7 +262,7 @@ function levelCompleted(){
     document.getElementById("nextLevel").style.visibility = "visible";
     nextLevelMusic.play();
     document.addEventListener("keydown", function(event) {
-        if (event.keyCode === 32) {
+        if (event.keyCode === 13) {
 
             var btnNext = document.getElementById("btnNext");
             if (btnNext) {
