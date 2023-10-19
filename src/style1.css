@@ -1,166 +1,20 @@
-.body{
-    margin: 0;
-}
 
-.background{
-    width: 100%;
-    height: 100vh;
-    background-image: url("resources/background2.jpg");
-    background-size: cover;
-    background-repeat: repeat-x;
-    overflow-x: hidden;
-    position: absolute;
-}
-
-.boy {
-    height: 210px;
-    margin-top: 347px;
-    position: absolute;
-}
-
-
-.box{
+.box1{
     width: 130px;
     height: 130px;
-    /*background-color: red;*/
     position: absolute;
-    margin-top: 443px;
-    background-image: url("resources/tree.gif");
+    margin-top: 435px;
+    background-image: url("resources/prickle.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-
-.score{
+.box2{
+    width: 130px;
+    height: 130px;
     position: absolute;
-    color: white;
-    font-size: 50px;
-    margin-left: 1200px;
-    font-weight: bold;
-    margin-top: 20px;
-
-}
-.start {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-     background-image:url("resources/Game Logo.png");
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.nextLevel{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    background-image: url("resources/NextLevel.png");
-    display: flex;
-    align-items: center;
-    /*justify-content: center;*/
-    visibility: hidden;
-}
-
-/*.btnNext{
-    position: relative;
-    left: 30px;
-    bottom: 10px;
-    flex-grow: 0.5 ;
-    font-size: 20px;
-    font-weight: bold;
-    border-color: deepskyblue;
-    border-radius: 20px;
-    flex-direction: inherit;
-}
-
-.btnNext:hover{
-    transform: scale(1.2);
-    transition-duration: 1s ;
-    cursor: pointer;
-}*/
-.dv1{
-    animation: blinker 1000ms linear infinite;
-    position: relative;
-    left: 575px;
-    top: 125px;
-    color: red;
-    font-family: "Agency FB";
-    font-weight: bold;
-    text-shadow: 3px 2px 4px white;
-    font-size: 65px;
-}
-
-
-.end{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    color: #0693d7;
-    /*background-image: linear-gradient(90deg, #8d8d8d 45%, black 100%);*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 90px;
-    color: white ;
-    font-family: Algerian;
-    text-overline-color: black;
-    visibility: hidden;
-}
-
-.btn{
-    height: 35px;
-    width: 300px;
-    margin-top: 50px;
-    font-size: 25px;
-    font-weight: 1000;
-    background-color: #057795;
-    border: none;
-    border-radius: 30px;
-}
-
-.btn:hover{
-    height: 37px;
-    width: 305px;
-    background-color: #ffb116;
-    cursor: pointer;
-    color: white;
-
-}
-
-/*============================Level 2=======================================*/
-
-.background2{
-    width: 100%;
-    height: 100vh;
-    background-image: url("resources/background3.jpg");
-    background-size: cover;
-    background-repeat: repeat-x;
-    overflow-x: hidden;
-    position: absolute;
-}
-
-/*============================Level 3=======================================*/
-
-.background3{
-    width: 100%;
-    height: 100vh;
-    background-image: url("resources/background.jpg");
-    background-size: cover;
-    background-repeat: repeat-x;
-    overflow-x: hidden;
-    position: absolute;
-}
-
-/*============================Level 4=======================================*/
-
-.background4{
-    width: 100%;
-    height: 100vh;
-    background-image: url("resources/background4.jpg");
-    background-size: cover;
-    background-repeat: repeat-x;
-    overflow-x: hidden;
-    position: absolute;
+    margin-top: 435px;
+    background-image: url("resources/OldThree.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }

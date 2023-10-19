@@ -2,8 +2,8 @@ let boy = document.getElementById("boy");
 let idleImageNumber = 1;
 let idleAnimationNumber = 0;
 
-var backgroundm = new Audio("resources/audio/beforeStart.mp3");
-
+var backgroundm = new Audio("resources/audio/waterfall3.mp3");
+backgroundm.volume=0.3;
 var deadMusic = new Audio("resources/audio/Dead1.mp3");
 
 var damaged = new Audio("resources/audio/damaged.mp3");
@@ -11,7 +11,7 @@ var damaged = new Audio("resources/audio/damaged.mp3");
 var runMusic = new Audio("resources/audio/running-on-the-road.mp3");
 
 var jump = new Audio("resources/audio/jump.mp3");
-
+  
 var nextLevelMusic = new Audio("resources/audio/HEROICCC(chosic.com).mp3");
 
 
@@ -43,7 +43,8 @@ function runAnimation() {
     }
 
     boy.src = " resources/Run__00" + runImageNumber + ".png";
-    backgroundm.pause();
+    backgroundm.play();
+    backgroundm.volume=0.1;
     runMusic.play();
 }
 
@@ -161,10 +162,10 @@ function createBoxes(){
     for (let i = 0; i <= 10; i++) {
 
     let box = document.createElement("div");
-    box.className = "box";
+    box.className = "box2";
     document.getElementById("background3").appendChild(box);
     box.style.marginLeft = boxMarginLeft + "px";
-    box.id = "box" + i;
+    box.id = "box2" + i;
 
     // boxMarginLeft= boxMarginLeft+500;
 
@@ -186,7 +187,7 @@ let boxAnimationId =0;
 
 function boxAnimation(){
     for (let i = 0; i < 10; i++) {
-    let box = document.getElementById("box"+i);
+    let box = document.getElementById("box2"+i);
     let currentMarginLeft = getComputedStyle(box).marginLeft;
     let newMarginLeft = parseInt(currentMarginLeft)-35;
     box.style.marginLeft=newMarginLeft+"px";

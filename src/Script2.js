@@ -6,7 +6,7 @@ var backgroundm = new Audio("resources/audio/beforeStart.mp3");
 
 var deadMusic = new Audio("resources/audio/Dead1.mp3");
 
-var damaged = new Audio("resources/audio/damaged.mp3");
+var damaged = new Audio("resources/audio/man-scream.mp3");
 
 var runMusic = new Audio("resources/audio/running-on-the-road.mp3");
 
@@ -161,10 +161,10 @@ function createBoxes(){
     for (let i = 0; i <= 10; i++) {
 
     let box = document.createElement("div");
-    box.className = "box";
+    box.className = "box1";
     document.getElementById("background2").appendChild(box);
     box.style.marginLeft = boxMarginLeft + "px";
-    box.id = "box" + i;
+    box.id = "box1" + i;
 
     // boxMarginLeft= boxMarginLeft+500;
 
@@ -186,7 +186,7 @@ let boxAnimationId =0;
 
 function boxAnimation(){
     for (let i = 0; i < 10; i++) {
-    let box = document.getElementById("box"+i);
+    let box = document.getElementById("box1"+i);
     let currentMarginLeft = getComputedStyle(box).marginLeft;
     let newMarginLeft = parseInt(currentMarginLeft)-35;
     box.style.marginLeft=newMarginLeft+"px";
@@ -222,7 +222,7 @@ function boyDeadAnimation(){
     deadImageNumber = deadImageNumber +1;
     runMusic.pause();
     damaged.play();
-    setTimeout(() => { damaged.pause(); }, 2500);
+    setTimeout(() => { damaged.pause(); }, 3000);
     backgroundm.play();
     deadMusic.play();
     setTimeout(() => { deadMusic.pause(); }, 1000);

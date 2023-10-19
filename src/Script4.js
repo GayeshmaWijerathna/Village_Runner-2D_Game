@@ -44,6 +44,7 @@ function runAnimation() {
 
     boy.src = " resources/Run__00" + runImageNumber + ".png";
      backgroundm.play();
+     backgroundm.volume=0.2;
     runMusic.play();
 }
 

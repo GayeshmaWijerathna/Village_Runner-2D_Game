@@ -3,18 +3,17 @@ let idleImageNumber = 1;
 let idleAnimationNumber = 0;
 
 
-var backgroundm = new Audio("resources/audio/beforeStart.mp3");
+var backgroundm = new Audio("src/resources/audio/beforeStart.mp3");
 
-var deadMusic = new Audio("resources/audio/Dead1.mp3");
+var deadMusic = new Audio("src/resources/audio/Dead1.mp3");
 
-var damaged = new Audio("resources/audio/damaged.mp3");
+var damaged = new Audio("src/resources/audio/damaged.mp3");
 
-var runMusic = new Audio("resources/audio/running-on-footstep.mp3");
+var runMusic = new Audio("src/resources/audio/running-on-footstep.mp3");
 
-var jump = new Audio("resources/audio/jump.mp3");
+var jump = new Audio("src/resources/audio/jump.mp3");
 
-var nextLevelMusic = new Audio("resources/audio/HEROICCC(chosic.com).mp3");
-
+var nextLevelMusic = new Audio("src/resources/audio/HEROICCC(chosic.com).mp3");
 
 
 
@@ -26,7 +25,7 @@ function idleAnimation() {
         idleImageNumber = 1;
     }
     boy.src = "resources/Idle__00" + idleImageNumber + ".png";
-
+    
      backgroundm.play();
 }
 
@@ -284,7 +283,7 @@ function levelCompleted(){
             if (btnNext) {
 
                 // Navigate to the next HTML page
-                window.location.href = "index2.html";
+                window.location.href = "src/index2.html";
                 nextLevelMusic.pause();
             }
         }
